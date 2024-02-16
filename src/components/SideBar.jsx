@@ -1,4 +1,5 @@
-const SideBar = ()=>{
+import {PiArrowLineLeft} from 'react-icons/pi'
+const SideBar = ({toggleSideBar})=>{
 
     const menuData = [
         {
@@ -21,9 +22,10 @@ const SideBar = ()=>{
 
     return(
 
-        <div className="w-full h-full bg-bgcolor text-textcolor">
-            Side bar
-
+        <div className="relative w-full h-full bg-bgcolor text-textcolor">
+         <h3 className="text-xl font-semibold">Utho</h3>
+         <div onClick={toggleSideBar} 
+         className='absolute right-0 pr-4 pt-4  top-0 text-xl hover:scale-105 transition-all duration-300' ><PiArrowLineLeft/></div>   
             <ul>
                 {menuData.map((item, key)=>{
                     return (
