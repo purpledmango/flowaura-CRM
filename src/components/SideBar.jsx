@@ -10,13 +10,13 @@ const MenuButton = ({ name, route, icon }) => {
 
     return (
         <Link to={route}>
-            <li className={`w-full px-4 py-2 rounded-lg grid grid-cols-4 items-center place-items-between transition-all duration-300 ease-in lg:gap-2 ${location.pathname === route ? "bg-accentcolor font-base text-xl shadow-2xl shadow-red" : "font-light hover:bg-primary/20"}`}>
-                <div className={`text-textcolor ${location.pathname === route ? "text-3xl" : "text-2xl"}`}>{icon}</div>
-                <div className='col-span-3'>
-                    <h3 className="text-textcolor capitalize">{name}</h3>
-                </div>
-            </li>
-        </Link>
+        <li className={`w-full p-2 rounded-lg flex flex-col items-center justify-between transition-all duration-300 ease-in lg:gap-2 ${location.pathname === route ? "bg-accentcolor font-base text-xl shadow-2xl shadow-red" : "font-light hover:bg-primary/20"}`}>
+            <div className={`text-textcolor text-3xl ${location.pathname === route ? "" : ""}`}>{icon}</div>
+            <div className='text-base'>
+                <h3 className="text-textcolor capitalize text-sm text-center font-light">{name}</h3>
+            </div>
+        </li>
+    </Link>
     );
 };
 
@@ -32,14 +32,14 @@ const SideBar = ({ toggleSideBar }) => {
 
     return (
         <div className=" w-full h-full  bg-bgcolor">
-            <div className='flex flex-col items-center justify-start px-2 lg:px-4'>
+            <div className='flex flex-col items-center justify-start lg:px-2'>
                 <div className='relative py-6 w-full'>
                     <h3 className="text-3xl font-semibold text-textcolor text-center">Utho</h3>
-                    <div onClick={toggleSideBar} className='absolute right-0  top-1/3 text-xl hover:scale-105 transition-all duration-300'>
-                        <FiArrowLeftCircle className='text-textcolor text-3xl' />
-                    </div>
+                        {/* <div onClick={toggleSideBar} className='absolute right-0  top-1/3 text-xl hover:scale-105 transition-all duration-300'>
+                            <FiArrowLeftCircle className='text-textcolor text-3xl' />
+                        </div> */}
                 </div>
-                <ul className='flex flex-col gap-8 w-full px-2'>
+                <ul className='flex flex-col gap-8 w-full p-2'>
                     {menuData.map((item, key) => (
                         <MenuButton key={key} name={item.name} route={item.route} icon={item.icon} />
                     ))}

@@ -27,9 +27,9 @@ const Tickets = () => {
         <section>
             <div className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-0">
                 {/* KPIS */}
-                <KPI name={"New Tickets"} data={25} icon={<PiNotificationFill className="text-rose-500" />} />
-                <KPI name={"Pending"} data={45} icon={<PiTimerFill className="text-yellow-600" />} />
-                <KPI name={"Awaiting Confirmation"} data={256} icon={<PiSpinnerGap className="text-blue-200" />} />
+                <KPI name={"New Tickets"} data={25} icon={<PiNotificationFill className="text-orange-500" />} />
+                <KPI name={"Pending"} data={45} icon={<PiTimerFill className="text-blue-600" />} />
+                <KPI name={"Awaiting Confirmation"} data={256} icon={<PiSpinnerGap className="text-red-200" />} />
                 <KPI name={"Resolved"} data={2564} icon={<PiCheckFat className="text-green-500" />} />
             </div>
 

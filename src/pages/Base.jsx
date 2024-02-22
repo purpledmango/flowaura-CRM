@@ -25,13 +25,13 @@ const Base = () => {
             <BrowserRouter>
                 <div className='grid grid-cols-12 bg-textcolor h-full'>
                     {/* Side Bar */}
-                    <div className={`h-full md:col-span-2 ${sideBarOpen ? " md:block hidden" : "hidden "}`}>
+                    <div className={`h-full md:col-span-1 ${sideBarOpen ? " md:block hidden" : "hidden "}`}>
                         <SideBar toggleSideBar={toggleSideBar} />
                         {!sideBarOpen && <PiArrowLineLeftBold className='text-bgcolor text-3xl absolute top-0' />}
 
                     </div>
                     {/* Main Body here */}
-                    <div className={`col-span-12 bg-textcolor rounded-l-xl px-3 md:px-6   ${sideBarOpen ? "md:col-span-10 " : "md:col-span-12"}`}>
+                    <div className={`col-span-12 bg-textcolor rounded-l-xl px-3 md:px-6   ${sideBarOpen ? "md:col-span-11 " : "md:col-span-12"}`}>
                         <Hud />
                         <Routes> {/* Import Routes from react-router-dom */}
                             <Route path='/login' element={<Auth />} />
